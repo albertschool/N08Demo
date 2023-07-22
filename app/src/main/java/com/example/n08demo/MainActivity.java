@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
                     if (result.getResultCode() == RESULT_CODE){
                         Intent ri = result.getData();
                         if (ri != null) {
-                            count3 = ri.getIntExtra("count", 0);
+                            count3 = ri.getIntExtra("count", -1);
                             tV1.setText("There were " + count3 + " presses");
                         }
                     }
@@ -44,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
         tV1 = findViewById(R.id.tV1);
         tV1.setText("There were "+count3+" presses");
     }
+
     public void opt1(View view) {
         Intent si = new Intent(this, OptOne.class);
         startActivity(si);
@@ -73,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
         if (source == REQUEST_CODE) {
             if (result == Activity.RESULT_OK) {
                 if (data_back != null) {
-                    count3 = data_back.getIntExtra("count", 0);
+                    count3 = data_back.getIntExtra("count", -1);
                     tV1.setText("There were " + count3 + " presses");
                 }
             }
@@ -85,5 +86,4 @@ public class MainActivity extends AppCompatActivity {
         si.putExtra("count3", count3);
         activityLauncher.launch(si);
     }
-
 }

@@ -32,7 +32,6 @@ public class OptThree extends AppCompatActivity {
     }
 
     public void back3(View view) {
-//        Intent gi3 = getIntent();
         gi3.putExtra("count",count);
         setResult(RESULT_OK,gi3);
         finish();

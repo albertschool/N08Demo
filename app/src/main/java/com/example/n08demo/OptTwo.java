@@ -12,6 +12,7 @@ public class OptTwo extends AppCompatActivity {
 
     private TextView tV;
     private int count;
+    Intent gi2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,8 +21,8 @@ public class OptTwo extends AppCompatActivity {
 
         tV = findViewById(R.id.tV);
 
-        Intent gi = getIntent();
-        count = gi.getIntExtra("count2",0);
+        gi2 = getIntent();
+        count = gi2.getIntExtra("count2",0);
 
         tV.setText("This is the "+count+" activity pass");
     }
