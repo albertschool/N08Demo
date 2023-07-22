@@ -7,6 +7,16 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
+/**
+ * The OptThree activity
+ * <p>
+ * This activity use to demonstrate pass with data receiving & returning by deprecated method
+ * </p>
+ *
+ * @author Levy Albert albert.school2015@gmail.com
+ * @version 2.0
+ * @since 22/7/2023
+ */
 public class OptThree extends AppCompatActivity {
 
     private TextView tV3;
@@ -26,11 +36,25 @@ public class OptThree extends AppCompatActivity {
         tV3.setText("There were "+count+" presses");
     }
 
-    public void addcount(View view) {
+    /**
+     * addCount method
+     * <p> Count clicks on the button
+     * </p>
+     *
+     * @param view the view that triggered the method
+     */
+    public void addCount(View view) {
         count++;
         tV3.setText("There were "+count+" presses");
     }
 
+    /**
+     * back3 method
+     * <p> Ending this activity & return with data
+     * </p>
+     *
+     * @param view the view that triggered the method
+     */
     public void back3(View view) {
         gi3.putExtra("count",count);
         setResult(RESULT_OK,gi3);

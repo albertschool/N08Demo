@@ -7,6 +7,16 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
+/**
+ * The OptFour activity
+ * <p>
+ * This activity use to demonstrate pass with data receiving & returning by ActivityLauncher
+ * </p>
+ *
+ * @author Levy Albert albert.school2015@gmail.com
+ * @version 2.0
+ * @since 22/7/2023
+ */
 public class OptFour extends AppCompatActivity {
 
     private TextView tV4;
@@ -27,11 +37,25 @@ public class OptFour extends AppCompatActivity {
         tV4.setText("There were "+count+" presses");
     }
 
-    public void addcount(View view) {
+    /**
+     * addCount method
+     * <p> Count clicks on the button
+     * </p>
+     *
+     * @param view the view that triggered the method
+     */
+    public void addCount(View view) {
         count++;
         tV4.setText("There were "+count+" presses");
     }
 
+    /**
+     * back4 method
+     * <p> Ending this activity & return with data
+     * </p>
+     *
+     * @param view the view that triggered the method
+     */
     public void back4(View view) {
         gi4.putExtra("count",count);
         setResult(RESULT_CODE,gi4);
