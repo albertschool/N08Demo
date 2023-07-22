@@ -32,7 +32,7 @@ public class OptFour extends AppCompatActivity {
         tV4 = (TextView) findViewById(R.id.tV4);
 
         gi4 = getIntent();
-        count = gi4.getIntExtra("count3",0);
+        count = gi4.getIntExtra("count3",-1);
 
         tV4.setText("There were "+count+" presses");
     }

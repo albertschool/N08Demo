@@ -31,7 +31,7 @@ public class OptThree extends AppCompatActivity {
         tV3 = (TextView) findViewById(R.id.tV3);
 
         gi3 = getIntent();
-        count = gi3.getIntExtra("count3",0);
+        count = gi3.getIntExtra("count3",-1);
 
         tV3.setText("There were "+count+" presses");
     }

@@ -32,7 +32,7 @@ public class OptTwo extends AppCompatActivity {
         tV = findViewById(R.id.tV);
 
         gi2 = getIntent();
-        count = gi2.getIntExtra("count2",0);
+        count = gi2.getIntExtra("count2",-1);
 
         tV.setText("This is the "+count+" activity pass");
     }
