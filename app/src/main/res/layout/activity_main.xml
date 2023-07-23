@@ -20,7 +20,7 @@
         android:onClick="opt1"
         android:paddingTop="0dp"
         android:paddingBottom="0dp"
-        android:text="Basic Pass" />
+        android:text="Basic Pass - Implicit intent demo" />
 
     <Space
         android:layout_width="match_parent"

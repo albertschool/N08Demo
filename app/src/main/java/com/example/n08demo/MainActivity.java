@@ -3,7 +3,6 @@ package com.example.n08demo;
 import androidx.activity.result.ActivityResult;
 import androidx.activity.result.ActivityResultCallback;
 import androidx.activity.result.ActivityResultLauncher;
-import androidx.activity.result.contract.ActivityResultContract;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -35,7 +34,8 @@ public class MainActivity extends AppCompatActivity {
     private int count2=0, count3=0;
     private static final int REQUEST_CODE = 100;
     private static final int RESULT_CODE = 104;
-    private ActivityResultLauncher<Intent> activityLauncher = registerForActivityResult(
+    private final ActivityResultLauncher<Intent> activityLauncher =
+            registerForActivityResult(
             new ActivityResultContracts.StartActivityForResult(),
             new ActivityResultCallback<ActivityResult>() {
                 /**
@@ -123,15 +123,15 @@ public class MainActivity extends AppCompatActivity {
      * <p> Method triggered by other activity returning result
      * </p>
      *
-     * @param source the request code triggered the activity
-     * @param result the status of the activity result
+     * @param requestCode the request code triggered the activity
+     * @param resultCode the status of the activity result
      * @param data_back the Intent returned object
      */
     @Override
-    protected void onActivityResult(int source, int result, @Nullable Intent data_back) {
-        super.onActivityResult(source, result, data_back);
-        if (source == REQUEST_CODE) {
-            if (result == Activity.RESULT_OK) {
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data_back) {
+        super.onActivityResult(requestCode, resultCode, data_back);
+        if (requestCode == REQUEST_CODE) {
+            if (resultCode == Activity.RESULT_OK) {
                 if (data_back != null) {
                     count3 = data_back.getIntExtra("count", -1);
                     tV1.setText("There were " + count3 + " presses");
