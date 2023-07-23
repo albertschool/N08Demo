@@ -118,7 +118,8 @@ public class OptOne extends AppCompatActivity {
      * @param view the view that triggered the method
      */
     public void camera(View view) {
-        Intent takePicIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        Intent takePicIntent = new Intent();
+        takePicIntent.setAction(MediaStore.ACTION_IMAGE_CAPTURE);
         if (takePicIntent.resolveActivity(getPackageManager()) != null) {
             startActivityForResult(takePicIntent, REQUEST_IMAGE_CAPTURE);
         }
@@ -132,7 +133,9 @@ public class OptOne extends AppCompatActivity {
      * @param view the view that triggered the method
      */
     public void gallery(View view) {
-        Intent intent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+        Intent intent = new Intent();
+        intent.setAction(Intent.ACTION_PICK);
+        intent.setData(MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
         startActivityForResult(intent, REQUEST_PICK_IMAGE);
     }
 }
